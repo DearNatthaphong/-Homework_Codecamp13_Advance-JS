@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array1 = [
+            { name: "apple", birth: "2000-01-01" },
+            { name: "banana", birth: "1990-10-01"  },
+            { name: "watermelon", birth: "1985-12-01" }
+        ];
+
+        let array2 = array1.map( x => {
+            let date = new Date("2019-10-01");
+
+            let birthDate = new Date(x.birth);
+
+            let age = date.getFullYear() - birthDate.getFullYear();
+
+            let m = date.getMonth() - birthDate.getMonth();
+
+            let d = date.getDate() - birthDate.getDate();
+
+            if ( m == 0 && d < 0 || m < 0) age--;
+            
+            x.age = `${age}`;
+            
+            return x;
+        } );
+
+        console.log(array2); 
+        /* (3) [{…}, {…}, {…}]
+            0 : {name: 'apple', birth: '2000-01-01', age: '19'}
+            1 : {name: 'banana', birth: '1990-10-01', age: '29'}
+            2 : {name: 'watermelon', birth: '1985-12-01', age: '33'}*/
+    </script>
+</body>
+</html>

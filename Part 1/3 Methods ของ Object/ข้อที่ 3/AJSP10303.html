@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let calculator =  {
+          read() {
+                this.v1 = +prompt("value 1: ");
+                this.v2 = +prompt("value 2: ");
+          },
+          sum() {
+            return (this.v1 + this.v2)
+          },
+          mul() {
+            return (this.v1 * this.v2)
+          }
+        };
+
+        calculator.read();
+        alert( calculator.sum() );
+        alert( calculator.mul() );
+    </script>
+</body>
+</html>
